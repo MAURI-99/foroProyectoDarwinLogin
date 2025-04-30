@@ -1,31 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
     const loginForm = document.getElementById('loginForm');
-    const mensajeError = document.getElementById('mensaje-error');
+
+    // Mostrar/ocultar contraseñas
+    document.querySelectorAll('.toggle-password').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = document.getElementById(btn.getAttribute('data-target'));
+            if (target.type === "password") {
+                target.type = "text";
+                btn.textContent = "🙈";
+            } else {
+                target.type = "password";
+                btn.textContent = "👁";
+            }
+        });
+    });
 
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
             const phone = registerForm.phone.value.trim();
             const password = registerForm.password.value.trim();
-            const confirmPassword = registerForm.confirm_password.value.trim();
+            const confirm = registerForm.confirm_password.value.trim();
+            const mensaje = document.getElementById('mensaje-error');
 
+            // Teléfono debe ser solo números
             if (isNaN(phone)) {
-                mensajeError.textContent = "❌ El teléfono debe contener solo números.";
+                mensaje.textContent = "El teléfono debe contener solo números.";
                 e.preventDefault();
                 return;
             }
 
-            if (password.length < 6) {
-                mensajeError.textContent = "❌ La contraseña debe tener mínimo 6 caracteres.";
+            // Contraseña segura: 8-16 caracteres, mayúsculas, minúsculas, número y especial (@, $, &, .)
+            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$&.])[A-Za-z\d@$&.]{8,16}$/;
+            if (!regex.test(password)) {
+                mensaje.textContent = "La contraseña debe tener 8-16 caracteres, con mayúscula, minúscula, número y uno de estos: @ $ & .";
                 e.preventDefault();
                 return;
             }
 
-            if (password !== confirmPassword) {
-                mensajeError.textContent = "❌ Las contraseñas no coinciden.";
+            // Las contraseñas deben coincidir
+            if (password !== confirm) {
+                mensaje.textContent = "❌ Las contraseñas no coinciden.";
                 e.preventDefault();
                 return;
             }
+
+            mensaje.textContent = ""; // Limpia error si todo está bien
         });
     }
 
@@ -34,33 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = loginForm.email.value.trim();
             const password = loginForm.password.value.trim();
 
-            if (!email.includes("@")) {
-                alert("Correo electrónico no válido.");
+            if (!email.includes("@") || password.length < 6) {
+                alert("Correo inválido o contraseña demasiado corta.");
                 e.preventDefault();
-                return;
-            }
-
-            if (password.length < 6) {
-                alert("La contraseña debe tener al menos 6 caracteres.");
-                e.preventDefault();
-                return;
             }
         });
     }
-
-    // Mostrar/ocultar contraseñas
-    document.querySelectorAll(".toggle-password").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const targetId = btn.getAttribute("data-target");
-            const input = document.getElementById(targetId);
-
-            if (input.type === "password") {
-                input.type = "text";
-                btn.textContent = "🙈";
-            } else {
-                input.type = "password";
-                btn.textContent = "👁";
-            }
-        });
-    });
 });
+

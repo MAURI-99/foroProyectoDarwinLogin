@@ -12,7 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Validar que las contraseñas coincidan
     if ($password !== $confirm_password) {
-        header("Location: ../views/register.php?error=Las contraseñas no coinciden");
+        $_SESSION["error"] = "❌ Las contraseñas no coinciden";
+        header("Location: ../views/register.php");
         exit();
     }
 
@@ -24,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt_check->store_result();
 
     if ($stmt_check->num_rows > 0) {
-        header("Location: ../views/register.php?error=Este correo ya está registrado");
+        $_SESSION["error"] = "❌ Este correo ya está registrado";
+        header("Location: ../views/register.php");
         exit();
     }
 
@@ -35,15 +37,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("sssss", $name, $email, $phone, $address, $hashed_password);
 
     if ($stmt->execute()) {
-        // Registro exitoso, redirigir al login
-        header("Location: ../views/login.php?success=Registro exitoso. Ahora inicia sesión.");
+        $_SESSION["success"] = "✅ ¡Registro exitoso! Ahora inicia sesión.";
+        header("Location: ../views/login.php");
         exit();
     } else {
-        header("Location: ../views/register.php?error=Error al registrar el usuario");
+        $_SESSION["error"] = "❌ Error al registrar el usuario";
+        header("Location: ../views/register.php");
         exit();
     }
 }
 ?>
+
 
 
 
