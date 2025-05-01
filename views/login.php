@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -62,8 +64,24 @@
 
 <!-- Script -->
 <script src="../assets/js/validation.js"></script>
+
+<!-- Script para cerrar sesión automáticamente al usar "Atrás" -->
+<script>
+// Detectar si la página se carga desde el caché del navegador (usuario hizo "Atrás")
+document.addEventListener('DOMContentLoaded', () => {
+    // Usamos el evento `pageshow` para detectar cuando la página se carga desde el caché
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // Si la página fue cargada desde el caché (usuario hizo "Atrás" en el navegador)
+            window.location.href = "../controllers/logout.php"; // Redirigimos a logout
+        }
+    });
+});
+</script>
+
 </body>
 </html>
+
 
 
 

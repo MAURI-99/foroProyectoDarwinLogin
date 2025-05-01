@@ -10,38 +10,8 @@ if (!isset($_SESSION["user_id"])) {
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - Xiaomi Store</title>
+    <!-- Enlazamos el archivo CSS externo -->
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <style>
-        /* Modal Flotante */
-        .modal {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex; align-items: center; justify-content: center;
-            z-index: 1000;
-        }
-        .modal-content {
-            background: white; padding: 20px; border-radius: 10px; text-align: center;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            max-width: 300px;
-        }
-        .modal-content p {
-            margin-bottom: 15px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .modal-content button {
-            padding: 8px 15px;
-            background-color: #ff6900;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .modal-content button:hover {
-            background-color: #e85d00;
-        }
-    </style>
 </head>
 <body>
 
@@ -103,6 +73,7 @@ if (!isset($_SESSION["user_id"])) {
 
 </body>
 </html>
+
 
 
 
