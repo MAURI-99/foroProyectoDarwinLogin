@@ -10,8 +10,8 @@ if (!isset($_SESSION["user_id"])) {
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - Xiaomi Store</title>
-    <!-- Enlazamos el archivo CSS externo -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <link rel="stylesheet" href="../assets/css/styles.css?v=1.0.1">
 </head>
 <body>
 
@@ -35,24 +35,40 @@ if (!isset($_SESSION["user_id"])) {
 
     <section class="products-grid">
         <div class="product-card">
-            <img src="../assets/images/producto1.png" alt="Producto Xiaomi">
-            <h3>Smartphone Redmi 12</h3>
+            <img src="../assets/images/producto1.0.png" alt="Producto Xiaomi">
+            <h3>Realme P3 5G 12</h3>
             <p>Precio: $200</p>
+            <button class="add-cart-btn">Añadir al carrito</button> 
         </div>
         <div class="product-card">
-            <img src="../assets/images/producto2.png" alt="Producto Xiaomi">
+            <img src="../assets/images/producto22.png" alt="Producto Xiaomi">
             <h3>Xiaomi Watch</h3>
             <p>Precio: $150</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
         </div>
         <div class="product-card">
-            <img src="../assets/images/producto2.png" alt="Producto Xiaomi">
-            <h3>Xiaomi Watch</h3>
-            <p>Precio: $150</p>
+            <img src="../assets/images/producto3.png" alt="Producto Xiaomi">
+            <h3>Aspiradora Robótica</h3>
+            <p>Precio: $350</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
         </div>
         <div class="product-card">
-            <img src="../assets/images/producto2.png" alt="Producto Xiaomi">
-            <h3>Xiaomi Watch</h3>
-            <p>Precio: $150</p>
+            <img src="../assets/images/producto4.png" alt="Producto Xiaomi">
+            <h3>Xiaomi Mi Tv 4x</h3>
+            <p>Precio: $450</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
+        </div>
+        <div class="product-card">
+            <img src="../assets/images/producto5.png" alt="Producto Xiaomi">
+            <h3>Mi Smart Speaker</h3>
+            <p>Precio: $55</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
+        </div>
+        <div class="product-card">
+            <img src="../assets/images/producto6.png" alt="Producto Xiaomi">
+            <h3>Xiaomi Buds 5</h3>
+            <p>Precio: $75</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
         </div>
     </section>
 </main>

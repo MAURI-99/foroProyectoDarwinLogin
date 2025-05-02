@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro - Xiaomi Store</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=1.0.1">
 
     <!-- SweetAlert CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
