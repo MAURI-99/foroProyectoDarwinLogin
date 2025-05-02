@@ -6,7 +6,7 @@
     <title>Registro - Xiaomi Store</title>
     <link rel="stylesheet" href="../assets/css/styles.css?v=1.0.1">
 
-    <!-- SweetAlert CDN -->
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
@@ -41,13 +41,13 @@
 </div>
 
 <footer>
-    <p>Todos los derechos reservados. Hecho por Darwin Armijos</p>
+    <p>⬇️⬇️ Todos los derechos reservados. ⬇️⬇️</p>
+    <p>✨ Hecho por Darwin Armijos ✨</p>
+    <p>📧 Contacto: <a href="mailto:dmarmijos10@utpl.edu.ec">darwin.armijos@example.com</a></p>
 </footer>
 
-<!-- Script de validaciones -->
-<script src="../assets/js/validation.js"></script>
+<script src="../assets/js/validation.js?v=1.0.1"></script>
 
-<!-- Ventana flotante si registro exitoso -->
 <script>
 <?php if (isset($_SESSION["success"])): ?>
     Swal.fire({

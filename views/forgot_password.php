@@ -22,7 +22,7 @@ session_start();
         </div>
     </div>
 
-    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/validation.js?v=1.0.1"></script>
 </body>
 </html>
 

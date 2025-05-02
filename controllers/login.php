@@ -17,14 +17,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->fetch();
 
         if (password_verify($password, $hashed_password)) {
-            // Login correcto
+            
             $_SESSION["user_id"] = $id;
             $_SESSION["user_name"] = $name;
             $_SESSION["success"] = "✅ ¡Bienvenido $name a Xiaomi Store!";
             header("Location: ../views/dashboard.php");
             exit();
         } else {
-            // Contraseña incorrecta
+            
             $_SESSION["error"] = "❌ Contraseña incorrecta";
             header("Location: ../views/login.php");
             exit();

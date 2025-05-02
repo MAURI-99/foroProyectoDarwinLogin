@@ -6,13 +6,13 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Login - Xiaomi Store</title>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.0.1">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=1.0.2">
 </head>
 <body>
 <div class="form-container">
     <h1 class="form-title">¡Bienvenido de nuevo a Xiaomi Store!</h1>
 
-    <!-- Mensajes flotantes -->
+   
     <?php if (isset($_SESSION["success"])): ?>
         <div class="modal" id="modal-success">
             <div class="modal-content">
@@ -32,7 +32,7 @@ session_start();
         </div>
     <?php endif; ?>
 
-    <!-- Formulario -->
+    
     <form action="../controllers/login.php" method="POST">
         <input type="email" name="email" required placeholder="Correo electrónico" />
         <div class="password-container">
@@ -46,10 +46,14 @@ session_start();
 </div>
 
 <footer>
-    <p>Todos los derechos reservados. Hecho por Darwin Armijos</p>
+    <p>⬇️⬇️ Todos los derechos reservados. ⬇️⬇️</p>
+    <p>✨ Hecho por Darwin Armijos ✨</p>
+    <p>📧 Contacto: <a href="mailto:dmarmijos10@utpl.edu.ec">darwin.armijos@example.com</a></p>
 </footer>
 
-<!-- Pequeño CSS para modal -->
+
+
+
 <style>
 .modal {
     position: fixed;
@@ -62,18 +66,18 @@ session_start();
 }
 </style>
 
-<!-- Script -->
-<script src="../assets/js/validation.js"></script>
 
-<!-- Script para cerrar sesión automáticamente al usar "Atrás" -->
+<script src="../assets/js/validation.js?v=1.0.1"></script>
+
+
 <script>
-// Detectar si la página se carga desde el caché del navegador (usuario hizo "Atrás")
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Usamos el evento `pageshow` para detectar cuando la página se carga desde el caché
+    
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
-            // Si la página fue cargada desde el caché (usuario hizo "Atrás" en el navegador)
-            window.location.href = "../controllers/logout.php"; // Redirigimos a logout
+           
+            window.location.href = "../controllers/logout.php"; 
         }
     });
 });

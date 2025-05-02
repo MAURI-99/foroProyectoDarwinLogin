@@ -10,14 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
-    // Validar que las contraseñas coincidan
+    
     if ($password !== $confirm_password) {
         $_SESSION["error"] = "❌ Las contraseñas no coinciden";
         header("Location: ../views/register.php");
         exit();
     }
 
-    // Verificar si el email ya existe
+    
     $sql_check = "SELECT id FROM users WHERE email = ?";
     $stmt_check = $conn->prepare($sql_check);
     $stmt_check->bind_param("s", $email);
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit();
     }
 
-    // Insertar nuevo usuario
+    
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO users (name, email, phone, address, password) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);

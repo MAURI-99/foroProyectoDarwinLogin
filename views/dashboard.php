@@ -11,7 +11,7 @@ if (!isset($_SESSION["user_id"])) {
     <meta charset="UTF-8">
     <title>Dashboard - Xiaomi Store</title>
 
-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.0.1">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=1.0.3">
 </head>
 <body>
 
@@ -70,14 +70,52 @@ if (!isset($_SESSION["user_id"])) {
             <p>Precio: $75</p>
             <button class="add-cart-btn">Añadir al carrito</button>
         </div>
+        <div class="product-card">
+            <img src="../assets/images/producto6.png" alt="Producto Xiaomi">
+            <h3>Xiaomi Buds 5</h3>
+            <p>Precio: $75</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
+        </div>
+        <div class="product-card">
+            <img src="../assets/images/producto6.png" alt="Producto Xiaomi">
+            <h3>Xiaomi Buds 5</h3>
+            <p>Precio: $75</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
+        </div>
+        <div class="product-card">
+            <img src="../assets/images/producto6.png" alt="Producto Xiaomi">
+            <h3>Xiaomi Buds 5</h3>
+            <p>Precio: $75</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
+        </div>
+        <div class="product-card">
+            <img src="../assets/images/producto6.png" alt="Producto Xiaomi">
+            <h3>Xiaomi Buds 5</h3>
+            <p>Precio: $75</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
+        </div>
+        <div class="product-card">
+            <img src="../assets/images/producto6.png" alt="Producto Xiaomi">
+            <h3>Xiaomi Buds 5</h3>
+            <p>Precio: $75</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
+        </div>
+        <div class="product-card">
+            <img src="../assets/images/producto6.png" alt="Producto Xiaomi">
+            <h3>Xiaomi Buds 5</h3>
+            <p>Precio: $75</p>
+            <button class="add-cart-btn">Añadir al carrito</button>
+        </div>
     </section>
 </main>
 
 <footer>
-    <p>Todos los derechos reservados. Hecho por Darwin Armijos</p>
+    <p>⬇️⬇️ Todos los derechos reservados. ⬇️⬇️</p>
+    <p>✨ Hecho por Darwin Armijos ✨</p>
+    <p>📧 Contacto: <a href="mailto:dmarmijos10@utpl.edu.ec">darwin.armijos@example.com</a></p>
 </footer>
 
-<!-- ✅ Modal flotante -->
+
 <?php if (isset($_SESSION["success"])): ?>
     <div class="modal" id="modal-success">
         <div class="modal-content">
